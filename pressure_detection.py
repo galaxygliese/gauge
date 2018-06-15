@@ -80,11 +80,11 @@ def Gauge(show=True):
     clf = LocalOutlierFactor(n_neighbors=2)
     perimeter = []
   
+    Cascade = cv2.CascadeClassifier('./only_pressure_gauge14_80.xml')
     while (cap.isOpened()):
        
         #camera
         ret, frame = cap.read()
-        Cascade = cv2.CascadeClassifier('./only_pressure_gauge14_80.xml')
 
         #gray scale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
